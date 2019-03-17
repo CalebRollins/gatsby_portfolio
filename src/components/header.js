@@ -1,42 +1,40 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react';
+import './app.css';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import { Link } from 'gatsby';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const NavButton = props => {
+  const navButtonStyle = { width: '7em', 'textTransform': 'lowercase', border: '2px solid white', margin: '-1px', color:'white', 'borderRadius': props.borderRadius }
+  return(
+    <div className='navbutton'>
+      <Grid item>
+        <Button
+            component={Link} to={props.relativeLink}
+            variant="outlined"
+            size="medium"
+            style={ navButtonStyle }
+            activeStyle={{'background-color': 'red'}}
+          >
+          {props.children}
+        </Button> 
+      </Grid>
+    </div>)}
+
+const Header = () => 
+  <div className='sidenav'>
+    <div className='navgrid'>
+      <Grid container direction="row" justify="center" alignItems="center">
+        <Grid container direction="row" justify="center" alignItems="center">
+          <NavButton borderRadius='3px 0 0 0' relativeLink='/about'>about</NavButton>
+          <NavButton borderRadius='0 3px 0 0' relativeLink='/projects'>projects</NavButton>
+        </Grid>
+        <Grid container direction="row" justify="center" alignItems="center">
+          <NavButton borderRadius='0 0 0 3px' relativeLink='/blog'>blog</NavButton>
+          <NavButton borderRadius='0 0 3px 0' relativeLink='/contact'>contact</NavButton>
+        </Grid>
+      </Grid>
     </div>
-  </header>
-)
+  </div>
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;

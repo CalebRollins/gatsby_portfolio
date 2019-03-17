@@ -2,9 +2,7 @@
 path: "/blog/2016-09-26"
 date: "2016-09-26"
 title: "Rotating Children of a Non-Uniformly Scaled Parent without Deformation in Unity"
----
-
-## Rotating Children of a Non-Uniformly Scaled Parent without Deformation in Unity
+---   
 
 When I was creating <a href="https://drive.google.com/drive/u/1/folders/0B3awpsZxDZ3mMWJ0OXZYM2tMcjQ">Evol</a>, my evolutionary fractal generation program, I ran into a well known problem in Unity. When you child objects to a non-uniformly scaled parent (i.e., a parent whose x, y, and z scale values are different), rotating the children makes them skewed.
 
