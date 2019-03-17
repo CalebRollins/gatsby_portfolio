@@ -10,7 +10,7 @@ When I was creating <a href="https://drive.google.com/drive/u/1/folders/0B3awpsZ
 
 Since fractals are by their nature hierarchical, this produced some strange results when I wanted to thicken the branches of my fractals. 
 
-<img src="./heartcake.png" class="center">
+![image](heartcake.png)
 
 While I was touched when Unity made me a heart and tiered wedding cake, this isn't what I wanted.
 
