@@ -6,7 +6,6 @@ const Page = props =>
     <div className="header">
       <Header />
     </div>
-
     <div className="content">
       {props.children}
     </div> 

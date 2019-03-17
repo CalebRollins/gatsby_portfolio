@@ -8,15 +8,17 @@ When I was creating <a href="https://drive.google.com/drive/u/1/folders/0B3awpsZ
 
 Since fractals are by their nature hierarchical, this produced some strange results when I wanted to thicken the branches of my fractals. 
 
-![image](heartcake.png)
+![Heart and Cake](heartcake.png)
 
 While I was touched when Unity made me a heart and tiered wedding cake, this isn't what I wanted.
 
-<img src="https://raw.githubusercontent.com/CalebRollins/CalebRollins.github.io/master/img/blog/blog4.PNG" class="center">
-<div class="caption">Wanted this</div>
+![Good fractal](wanted_this.png)
+<div class="caption">Wanted this</div>  
 
-<img src="https://raw.githubusercontent.com/CalebRollins/CalebRollins.github.io/master/img/blog/blog3.PNG" class="center">
+![Bad fractal](got_this.png)
 <div class="caption">Got this</div>  
+
+
 
 There are a couple of ways to circumvent this problem, as per aldonaletto's answer [here](http://answers.unity3d.com/questions/197739/object-skewing-on-rotation.html). One is to parent your rotated objects and your non-uniformly scaled object to an empty, uniformly scaled object. I didn't choose this approach because it was important to me that the object hierarchy remain unchanged.
 
@@ -24,8 +26,7 @@ Another solution is to create the objects in their correct scale in an external 
 
 My solution was to forgo Unity's built in scale system altogether and manually edit the mesh myself. While I can't guarantee this will work for any models more complex than the simple cylinders that comprise my fractals' branches, it worked well for me.
 
-<pre>
-<code>
+<pre><code>
 public static void Scale (MeshFilter originalMesh, float x, float y, float z)
 {
   Vector3[] verts = originalMesh.mesh.vertices; // get all vertices from the mesh
@@ -35,11 +36,10 @@ public static void Scale (MeshFilter originalMesh, float x, float y, float z)
     
   originalMesh.mesh.vertices = verts; // reassign the vertices back to the mesh
 }
-</code>
-</pre>
+</code></pre>
 
 Then I just called it like this...
 
 ...and voila!
 
-<img src="https://raw.githubusercontent.com/CalebRollins/CalebRollins.github.io/master/img/blog/blogimg.PNG" class="center">
+![Before and after fractal](voila.png)

@@ -7,7 +7,7 @@
 
 .sidenav {
   min-width: 18em;
-  background-color: #111;
+  background-color: #1a1b1e;
   height: 100%;
   min-height: 100vh;
 }
@@ -32,22 +32,18 @@
 }
 
 .navbutton {
-  transition: background-color 0.5s linear;
+  transition: background-color .85s linear;
 }
 
 .navbutton:hover {
   background-color: red;
 }
 
-.navbutton:active {
-  transition: background-color 0s linear;
-  background-color: white;
-}
-
 /* Moves sidenav to top on small screens */
-@media all and (max-width: 600px) {
+@media all and (max-width: 750px) {
   .flex-container {
       flex-direction: column;
+      max-width: 100vw;
   }
 
   .sidenav {
@@ -66,7 +62,7 @@
 }
 
 .center {
-  margin: auto;
+  margin: 0 auto 0 auto;
   width: 90%;
 }
 

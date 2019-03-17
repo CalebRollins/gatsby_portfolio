@@ -5,12 +5,12 @@ import Grid from '@material-ui/core/Grid';
 import { Link } from 'gatsby';
 
 const NavButton = props => {
-  const navButtonStyle = { width: '7em', 'textTransform': 'lowercase', border: '2px solid white', margin: '-1px', color:'white', 'borderRadius': props.borderRadius }
+  const navButtonStyle = { width: '7em', 'textTransform': 'lowercase', border: '1px solid #7a7b7c', margin: '-.5px', color:'white', 'borderRadius': '0 0 0 0' }
   return(
     <div className='navbutton'>
       <Grid item>
         <Button
-            component={Link} to={props.relativeLink}
+            component={Link} to={props.relativeLink} partiallyActive={true}
             variant="outlined"
             size="medium"
             style={ navButtonStyle }
@@ -26,12 +26,12 @@ const Header = () =>
     <div className='navgrid'>
       <Grid container direction="row" justify="center" alignItems="center">
         <Grid container direction="row" justify="center" alignItems="center">
-          <NavButton borderRadius='3px 0 0 0' relativeLink='/about'>about</NavButton>
-          <NavButton borderRadius='0 3px 0 0' relativeLink='/projects'>projects</NavButton>
+          <NavButton relativeLink='/about'>about</NavButton>
+          <NavButton relativeLink='/projects'>projects</NavButton>
         </Grid>
         <Grid container direction="row" justify="center" alignItems="center">
-          <NavButton borderRadius='0 0 0 3px' relativeLink='/blog'>blog</NavButton>
-          <NavButton borderRadius='0 0 3px 0' relativeLink='/contact'>contact</NavButton>
+          <NavButton relativeLink='/blog'>blog</NavButton>
+          <NavButton relativeLink='/contact'>contact</NavButton>
         </Grid>
       </Grid>
     </div>
