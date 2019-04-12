@@ -8,6 +8,7 @@ export default ({ data }) => {
   return (
     <Page>
       <div>
+        <h2>Blog</h2>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>

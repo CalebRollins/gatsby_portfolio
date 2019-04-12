@@ -4,6 +4,7 @@ import Page from '../components/Page.js';
 const AboutPage = () =>
   <>
     <Page>
+      <h2>About</h2>
       <p>I am a software developer. I graduated with my Computer Science degree in 2016.</p>
       <p>Since then, I've been working for The Weather Company.</p>
       <p>I dabble in other things too, like art and guitar.</p>
