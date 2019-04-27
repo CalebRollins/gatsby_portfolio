@@ -8,13 +8,15 @@ const ImageSlide = ({ image }) => {
     };
   
     return (
-      <img src={image} className="image-slide" style={styles}></img>
+      <div className="slidecontainer">
+        <img src={image} className="imageslide" style={styles}></img>
+      </div>
     );
 }
 
 const Arrow = ({ direction, clickFunction, glyph }) => (
   <div
-    className={ `slide-arrow ${direction}` }
+    className={ `slidearrow ${direction}` }
     onClick={ clickFunction }>
     { glyph }
   </div>
@@ -52,24 +54,30 @@ class Carousel extends React.Component {
       currentImageIndex: index
     });
   }
-  
+
   render () {
-      return (
-          <div className="carousel">
+    const pips = this.props.images.map(
+      (elem, index) => index == this.state.currentImageIndex ? "|" : "-"  
+    )
+    return (
+        <div className="carousel">
+          <ImageSlide image={this.props.images[this.state.currentImageIndex]} />
+          <div className="pad"/>
+          <div className="slidecontrols">
             <Arrow
               direction="left"
               clickFunction={ this.previousSlide }
               glyph="&#9664;" />
-
-            <ImageSlide image={this.props.images[this.state.currentImageIndex]} />
+            { pips.map(x => <div className ="slidepip">{x}</div>) }
 
             <Arrow
               direction="right"
               clickFunction={ this.nextSlide }
               glyph="&#9654;" />
-            
           </div>
-      )
+          <div className="imageslidecaption">{this.props.captions[this.state.currentImageIndex]}</div>
+        </div>
+    )
   }
 }
 export default Carousel;

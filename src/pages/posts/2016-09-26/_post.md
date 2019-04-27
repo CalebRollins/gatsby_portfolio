@@ -26,8 +26,7 @@ Another solution is to create the objects in their correct scale in an external 
 
 My solution was to forgo Unity's built in scale system altogether and manually edit the mesh myself. While I can't guarantee this will work for any models more complex than the simple cylinders that comprise my fractals' branches, it worked well for me.
 
-<pre><code>
-public static void Scale (MeshFilter originalMesh, float x, float y, float z)
+<pre><code>public static void Scale (MeshFilter originalMesh, float x, float y, float z)
 {
   Vector3[] verts = originalMesh.mesh.vertices; // get all vertices from the mesh
 
@@ -35,8 +34,7 @@ public static void Scale (MeshFilter originalMesh, float x, float y, float z)
     verts[i] = Vector3.Scale(verts[i], new Vector3(x, y, z)); // scale the vertices
     
   originalMesh.mesh.vertices = verts; // reassign the vertices back to the mesh
-}
-</code></pre>
+}</code></pre>
 
 Then I just called it like this...
 

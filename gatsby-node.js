@@ -11,6 +11,14 @@ exports.createPages = ({ actions, graphql }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
 
+  const { createRedirect } = actions
+  createRedirect({
+    fromPath: `/`,
+    toPath: `/about`,
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
+
   return graphql(`
     {
       allMarkdownRemark(

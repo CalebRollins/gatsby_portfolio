@@ -1,8 +1,8 @@
 import React from 'react';
-import './app.css';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import { Link } from 'gatsby';
+import "./app.css"
 
 const NavButton = props => {
   const navButtonStyle = { width: '7em', 'textTransform': 'lowercase', border: '1px solid #7a7b7c', margin: '-.5px', color:'white', 'borderRadius': '0 0 0 0' }
@@ -15,7 +15,7 @@ const NavButton = props => {
             size="medium"
             style={ navButtonStyle }
             activeStyle={{'background-color': 'red'}}
-          >
+        >
           {props.children}
         </Button> 
       </Grid>

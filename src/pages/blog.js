@@ -7,19 +7,18 @@ export default ({ data }) => {
   console.log(data)
   return (
     <Page>
-      <div>
-        <h2>Blog</h2>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <h3>
-              <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-            </h3>
-            <p><em>{node.frontmatter.date}</em></p>
-            <p>{node.excerpt}</p>
-          </div>
-        ))}
-      </div>
+      <h2>Blog</h2>
+      <hr/>
+      <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <div key={node.id}>
+          <h3>
+            <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+          </h3>
+          <p><em>{node.frontmatter.date}</em></p>
+          <p>{node.excerpt}</p>
+        </div>
+      ))}
     </Page>
   )
 }
