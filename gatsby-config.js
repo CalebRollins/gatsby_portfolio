@@ -51,6 +51,7 @@ module.exports = {
               sizeByPixelDensity: true,
               showCaptions: true,
               tracedSVG: true,
+              wrapperStyle: {margin: 0}
             },
           },
         ],

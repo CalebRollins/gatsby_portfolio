@@ -6,19 +6,16 @@ title: "Rotating Children of a Non-Uniformly Scaled Parent without Deformation i
 
 When I was creating <a href="https://drive.google.com/drive/u/1/folders/0B3awpsZxDZ3mMWJ0OXZYM2tMcjQ">Evol</a>, my evolutionary fractal generation program, I ran into a well known problem in Unity. When you child objects to a non-uniformly scaled parent (i.e., a parent whose x, y, and z scale values are different), rotating the children makes them skewed.
 
-Since fractals are by their nature hierarchical, this produced some strange results when I wanted to thicken the branches of my fractals. 
+Since fractals are by their nature hierarchical, this produced some strange results when I wanted to thicken the branches of the fractals. 
 
 ![Heart and Cake](heartcake.png)
 
 While I was touched when Unity made me a heart and tiered wedding cake, this isn't what I wanted.
 
-![Good fractal](wanted_this.png)
-<div class="caption">Wanted this</div>  
+![Good fractal](wanted_this.png)<div class="caption">Wanted this</div>  
 
 ![Bad fractal](got_this.png)
 <div class="caption">Got this</div>  
-
-
 
 There are a couple of ways to circumvent this problem, as per aldonaletto's answer [here](http://answers.unity3d.com/questions/197739/object-skewing-on-rotation.html). One is to parent your rotated objects and your non-uniformly scaled object to an empty, uniformly scaled object. I didn't choose this approach because it was important to me that the object hierarchy remain unchanged.
 
